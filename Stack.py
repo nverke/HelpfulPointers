@@ -16,45 +16,35 @@
 # -------------------
 
 class Stack:
-     def __init__(self):
-         self.items = []
-
-     def isEmpty(self):
-         return self.items == []
-
-     def push(self, item):
-         self.items.insert(0,item)
-
-     def pop(self):
-         return self.items.pop(0)
-
-     def peek(self):
-         return self.items[0]
-
-     def size(self):
-         return len(self.items)
+    def __init__(self):
+        self.items = []
+    def isEmpty(self):
+        return self.items == []
+    def push(self, item):
+        if (isinstance(item, int)):
+            self.items.insert(0,item);
+    def pop(self):
+        return self.items.pop(0)
+    def peek(self):
+        return self.items[0]
+    def size(self):
+        return len(self.items)
 
 def Stacker():
     stack = Stack();
-	item = int(raw_input("hey, define a variable already."));
-	print ("Hey whatcha want to do?");
+    choice = 0;
+    while(choice != 4):
+        choice = int(raw_input("1: push a var 2: pop a var 3: peek at stack 4: quit "));
+        if(choice == 1):
+            item = int(raw_input("What do you want to push? "));
+            stack.push(item);
+    	elif(choice == 2):
+    		print(stack.pop());
+    	elif(choice == 3):
+            print(stack.peek());
+        elif(choice == 4):
+            print("Goodbye.");
+        else:
+            print("U failed to use the choice");
 
-	menu = int(raw_input("1:push my var 2: pop a var 3: peek at stack");
-
-	output = 0
-
-	if (menu == 1):
-		s.push(item);
-	elif (menu == 2):
-		print(s.pop()));
-	elif (menu == 3):
-		print(s.peek());
-	else
-		print("U failed to use the menu");
-
-	return output;
-
-while(output == 0):
-	output = Stacker();
-
-Stacker()
+    return;
